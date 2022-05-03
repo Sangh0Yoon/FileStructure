@@ -1,0 +1,30 @@
+[C]
+▶ gets_s : 개행(\n)을 기준으로 문자열 입력, 문자열 마지막에 '\0'을 붙여준다.
+	: 버퍼 오버플로우의 가능성때문에 gets_s를 만들어 vs에서 사용함.
+▶ puts : char* 타입을 표준 출력(stdout)으로 보내는 함수, 개행도 보내져서 자동으로 줄바꿈.
+▶ fprintf : 파일에 내용 wirte
+▶ fclose : 파일 닫음
+▶ fopen : 파일을 설정한 모드로 열어줌.
+▶ fread : fread(저장할 문자열 주소, 문자열 사이즈, 반복 횟수, 읽을 파일 포인터)
+           : 오류 뜨면 0반환.
+▶ fwrite : fwrite(쓸 문자열 주소, 문자열 사이즈, 반복 횟수, 쓸 파일 포인터)
+▶ system("PAUSE") : 이 코드의 지점에서 잠깐 멈출 수 있다.(vs에서는 키입력시 넘어감)
+
+[C++]
+▶ Flush : 버퍼에 담긴 데이터가 모두 쓸어내려지는 것. 
+▶ std::flush : 커서를 다음 행으로 줄바꿈하지 않고 Flush하는 것.
+▶ .open(filename, ios::in) : ios::in(읽기전용), ios::out(쓰기전용), ios::ate(파일끝에위치)
+                                  : ios::app(모든 출력은 파일끝에 추가), ios::trunc(파일 존재시 지움)
+		         : ios::binary(이진 모드)
+▶ unsetf(ios::skipws) : white space를 skip한다. unset은 끈다는 것. 즉, 공백을 입력 받음.
+▶ .write((char *) &버퍼, 입력받을 size) : length의 주소를 버퍼로 받고, size만큼 버퍼에 입력하여
+                                                    파일에 저장한다.
+▶ .read((char *) &버퍼, 읽을 size) : 파일로부터 size만큼 입력을 받는다. 그리고 시작주소에 저장
+▶ tellg : 위치 지정자의 위치를 반환. seekg(0,is.end())를 하면 is에 맨 끝으로 위치 지정자 이동
+▶ getline(buf, n) : 파일에서 개행문자(\n)가 나올 때 까지 n-1(마지막은 종료문자라서)만큼 읽음.
+	           : getline(buf, n, '|') 수직바(|)가 나올 때 까지 입력 받는다.
+
+[String.h]
+▶ strcat(문자열, 합칠 문자열)
+▶ strcpy(문자열, 복사할 문자열)
+▶ strlen : 문자열 길이 반환.
